@@ -54,6 +54,13 @@ const RootQuery = new GraphQLObjectType({
         console.log(typeof(args.id));
         return _.find(episodes, {id: args.id});
       }
+    },
+    mentor: {
+      type: MentorType,
+      args: { id: {type: GraphQLID} },
+      resolve(parent, args){
+        return _.find(mentors, {id: args.id});
+      }
     }
   }
 });
