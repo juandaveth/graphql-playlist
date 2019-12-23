@@ -2,7 +2,7 @@ const graphql = require('graphql');
 
 // Firt we'll define one object type
 // Using ES6 destructuring
-const { GraphQLObjectType, GraphQLString } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
 const EpisodeType = new GraphQLObjectType({
   name: 'Episode',
@@ -25,3 +25,7 @@ const RootQuery = new GraphQLObjectType({
     }
   }
 })
+
+module.exports = new GraphQLSchema({
+  query: RootQuery
+}); 
