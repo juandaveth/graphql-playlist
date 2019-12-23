@@ -1,7 +1,12 @@
 const graphql = require('graphql');
 const _ = require('lodash');
 
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
+const { 
+  GraphQLObjectType, 
+  GraphQLString, 
+  GraphQLSchema,
+  GraphQLID,
+} = graphql;
 
 // dummy data to test episodes
 var episodes = [
@@ -15,7 +20,7 @@ var episodes = [
 const EpisodeType = new GraphQLObjectType({
   name: 'Episode',
   fields:() => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     name: { type: GraphQLString },
     podcast: { type: GraphQLString },
   })
@@ -26,7 +31,7 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     episode: {
       type: EpisodeType,
-      args: { id: {type: GraphQLString} },
+      args: { id: {type: GraphQLID} },
       resolve(parent, args){
         // here we will retrieve info from some db
         return _.find(episodes, {id: args.id});
