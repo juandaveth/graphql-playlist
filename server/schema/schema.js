@@ -34,6 +34,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: {type: GraphQLID} },
       resolve(parent, args){
         // here we will retrieve info from some db
+        console.log(typeof(args.id));
         return _.find(episodes, {id: args.id});
       }
     }
