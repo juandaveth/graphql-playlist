@@ -83,6 +83,12 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args){
         return episodes
       }
+    },
+    mentors: {
+      type: new GraphQLList(MentorType),
+      resolve(parent, args){
+        return mentors
+      }
     }
   }
 });
