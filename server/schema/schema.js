@@ -29,10 +29,16 @@ const RootQuery = new GraphQLObjectType({
       args: { id: {type: GraphQLString} },
       resolve(parent, args){
         // here we will retrieve info from some db
+        return _.find(episodes, {id: args.id});
       }
     }
   }
-})
+});
+
+episode(id: "2"){
+  name
+  podcast
+}
 
 module.exports = new GraphQLSchema({
   query: RootQuery
