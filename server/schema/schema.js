@@ -17,7 +17,7 @@ const EpisodeType = new GraphQLObjectType({
   fields:() => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
-    show: { type: GraphQLString },
+    podcast: { type: GraphQLString },
   })
 });
 
