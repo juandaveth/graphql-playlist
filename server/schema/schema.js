@@ -31,7 +31,13 @@ const EpisodeType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     podcast: { type: GraphQLString },
-   
+    mentor: {
+      type: MentorType,
+      resolve(parent, args){
+        console.log(parent);
+        return _.find(mentors, { id: parent.mentorId});
+      }
+    }
   })
 });
 
