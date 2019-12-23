@@ -16,6 +16,9 @@ const EpisodeType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-
+    book: {
+      type: EpisodeType,
+      args: { id: {type: GraphQLString} }
+    }
   }
 })
