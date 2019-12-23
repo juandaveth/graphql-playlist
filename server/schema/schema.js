@@ -18,7 +18,7 @@ var episodes = [
   {name: '#18 Naval Ravikant — The Angel Philosopher', podcast: 'The Knowledge Project with Shane Parris', id: '5', mentorId: '1'},
   {name: 'Seth Godin: Purple Cows', podcast: 'North Star Podcast', id: '6', mentorId: '2'},
   {name: 'Ryan Holiday: Timeless Lessons From History', podcast: 'North Star Podcast', id: '7', mentorId: '3'},
-  {name: 'Ryan Holiday: Using Practical Ancient Philosophy as a Guide to Achieving Mastery', podcast: 'The School of Greatness', id: '5', mentorId: '3'},
+  {name: 'Ryan Holiday: Using Practical Ancient Philosophy as a Guide to Achieving Mastery', podcast: 'The School of Greatness', id: '8', mentorId: '3'},
 ]
 
 // dummy data to mentors
