@@ -16,6 +16,9 @@ var episodes = [
   {name: '#376: How Seth Godin Manages His Life — Rules, Principles, and Obsessions (Repost)', podcast: 'The Tim Ferriss Show', id: '3', mentorId: '2'},
   {name: '#11 Media Manipulator with Ryan Holiday', podcast: 'The Knowledge Project with Shane Parris', id: '4', mentorId: '3'},
   {name: '#18 Naval Ravikant — The Angel Philosopher', podcast: 'The Knowledge Project with Shane Parris', id: '5', mentorId: '1'},
+  {name: 'Seth Godin: Purple Cows', podcast: 'North Star Podcast', id: '6', mentorId: '2'},
+  {name: 'Ryan Holiday: Timeless Lessons From History', podcast: 'North Star Podcast', id: '7', mentorId: '3'},
+  {name: 'Ryan Holiday: Using Practical Ancient Philosophy as a Guide to Achieving Mastery', podcast: 'The School of Greatness', id: '5', mentorId: '3'},
 ]
 
 // dummy data to mentors
