@@ -7,6 +7,7 @@ const {
   GraphQLSchema,
   GraphQLID,
   GraphQLInt,
+  GraphQLList,
 } = graphql;
 
 // dummy data to test episodes
@@ -50,6 +51,12 @@ const MentorType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     age: { type: GraphQLInt },
+    episodes: {
+      type: new GraphQLList(EpisodeType),
+      resolve(parent, args){
+        return _.filter(episodes, {mentorId: parent.id})
+      }
+    }
   })
 });
 
