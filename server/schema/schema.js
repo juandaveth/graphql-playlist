@@ -6,6 +6,7 @@ const {
   GraphQLString, 
   GraphQLSchema,
   GraphQLID,
+  GraphQLInt,
 } = graphql;
 
 // dummy data to test episodes
@@ -30,6 +31,15 @@ const EpisodeType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     podcast: { type: GraphQLString },
+  })
+});
+
+const MentorType = new GraphQLObjectType({
+  name: 'Mentor',
+  fields:() => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    age: { type: GraphQLInt },
   })
 });
 
