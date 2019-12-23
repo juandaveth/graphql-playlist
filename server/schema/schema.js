@@ -17,6 +17,13 @@ var episodes = [
   {name: '#18 Naval Ravikant — The Angel Philosopher', podcast: 'The Knowledge Project with Shane Parris', id: '5'},
 ]
 
+// dummy data to mentors
+var mentors = [
+  {name: 'Naval Ravikant', age: 45, id: '1'},
+  {name: 'Seth Godin', age: 59, id: '2'},
+  {name: 'Ryan Holiday', age: 32, id: '3'},
+]
+
 const EpisodeType = new GraphQLObjectType({
   name: 'Episode',
   fields:() => ({
@@ -41,10 +48,6 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
-/* episode(id: "2"){
-  name
-  podcast
-} */
 
 module.exports = new GraphQLSchema({
   query: RootQuery
