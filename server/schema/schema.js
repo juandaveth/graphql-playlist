@@ -35,10 +35,10 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
-episode(id: "2"){
+/* episode(id: "2"){
   name
   podcast
-}
+} */
 
 module.exports = new GraphQLSchema({
   query: RootQuery
