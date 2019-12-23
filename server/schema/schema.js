@@ -4,11 +4,18 @@ const graphql = require('graphql');
 // Using ES6 destructuring
 const { GraphQLObjectType, GraphQLString } = graphql;
 
-const BookType = new GraphQLObjectType({
-  name: 'Book',
+const EpisodeType = new GraphQLObjectType({
+  name: 'Episode',
   fields:() => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
-    genre: { type: GraphQLString },
+    show: { type: GraphQLString },
   })
 });
+
+const RootQuery = new GraphQLObjectType({
+  name: 'RootQueryType',
+  fields: {
+
+  }
+})
