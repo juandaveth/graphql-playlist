@@ -101,6 +101,12 @@ const Mutation = new GraphQLObjectType({
      args: {
        name: {type: GraphQLString},
        age: {type: GraphQLInt},
+     },
+     resolve(parent, args){
+       let mentor = new Mentor({
+         name: args.name,
+         age: args.age,
+       });
      }
    } 
   }
