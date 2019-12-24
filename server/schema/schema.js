@@ -96,7 +96,13 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-   addMentor:  
+   addMentor: {
+     type: MentorType,
+     args: {
+       name: {type: GraphQLString},
+       age: {type: GraphQLInt},
+     }
+   } 
   }
 })
 
