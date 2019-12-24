@@ -38,8 +38,7 @@ const EpisodeType = new GraphQLObjectType({
     mentor: {
       type: MentorType,
       resolve(parent, args){
-        console.log(parent);
-        return _.find(mentors, { id: parent.mentorId});
+        //return _.find(mentors, { id: parent.mentorId});
       }
     }
   })
@@ -54,7 +53,7 @@ const MentorType = new GraphQLObjectType({
     episodes: {
       type: new GraphQLList(EpisodeType),
       resolve(parent, args){
-        return _.filter(episodes, {mentorId: parent.id})
+        //return _.filter(episodes, {mentorId: parent.id})
       }
     }
   })
@@ -67,27 +66,26 @@ const RootQuery = new GraphQLObjectType({
       type: EpisodeType,
       args: { id: {type: GraphQLID} },
       resolve(parent, args){
-        console.log(typeof(args.id));
-        return _.find(episodes, {id: args.id});
+        //return _.find(episodes, {id: args.id});
       }
     },
     mentor: {
       type: MentorType,
       args: { id: {type: GraphQLID} },
       resolve(parent, args){
-        return _.find(mentors, {id: args.id});
+        //return _.find(mentors, {id: args.id});
       }
     },
     episodes: {
       type: new GraphQLList(EpisodeType),
       resolve(parent, args){
-        return episodes
+        //return episodes
       }
     },
     mentors: {
       type: new GraphQLList(MentorType),
       resolve(parent, args){
-        return mentors
+        //return mentors
       }
     }
   }
