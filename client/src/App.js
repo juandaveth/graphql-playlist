@@ -1,5 +1,6 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
+import {ApolloProvider} from 'react-apollo';
 
 import EpisodeList from './components/EpisodeList';
 
@@ -10,10 +11,13 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <div className="main">
-      <h1>Hello World!</h1>
-      <EpisodeList />
-    </div>
+    <ApolloProvider client={client}>
+      <div className="main">
+        <h1>Hello World!</h1>
+        <EpisodeList />
+      </div>
+    </ApolloProvider>
+  
   );
 }
 
