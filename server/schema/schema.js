@@ -10,6 +10,7 @@ const {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLNonNull,
 } = graphql;
 
 // dummy data to test episodes --> Going to MongoDB
