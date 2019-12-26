@@ -20,6 +20,7 @@ const {
   {name: '#11 Media Manipulator with Ryan Holiday', podcast: 'The Knowledge Project with Shane Parris', id: '4', mentorId: '3'},
   {name: '#18 Naval Ravikant — The Angel Philosopher', podcast: 'The Knowledge Project with Shane Parris', id: '5', mentorId: '1'},
   {name: 'Seth Godin: Purple Cows', podcast: 'North Star Podcast', id: '6', mentorId: '2'},
+    5e04e132a0d9d84bb09579f5
   {name: 'Ryan Holiday: Timeless Lessons From History', podcast: 'North Star Podcast', id: '7', mentorId: '3'},
   {name: 'Ryan Holiday: Using Practical Ancient Philosophy as a Guide to Achieving Mastery', podcast: 'The School of Greatness', id: '8', mentorId: '3'},
 ] */
@@ -41,6 +42,7 @@ const EpisodeType = new GraphQLObjectType({
       type: MentorType,
       resolve(parent, args){
         //return _.find(mentors, { id: parent.mentorId});
+        return Mentor.findById(parent.mentorId)
       }
     }
   })
@@ -56,6 +58,7 @@ const MentorType = new GraphQLObjectType({
       type: new GraphQLList(EpisodeType),
       resolve(parent, args){
         //return _.filter(episodes, {mentorId: parent.id})
+        return Episode.find({mentorId: parent.id});
       }
     }
   })
@@ -69,6 +72,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: {type: GraphQLID} },
       resolve(parent, args){
         //return _.find(episodes, {id: args.id});
+        return Episode.findById(args.id);
       }
     },
     mentor: {
@@ -76,18 +80,21 @@ const RootQuery = new GraphQLObjectType({
       args: { id: {type: GraphQLID} },
       resolve(parent, args){
         //return _.find(mentors, {id: args.id});
+        return Mentor.findById(args.id);
       }
     },
     episodes: {
       type: new GraphQLList(EpisodeType),
       resolve(parent, args){
         //return episodes
+        return Episode.find({});
       }
     },
     mentors: {
       type: new GraphQLList(MentorType),
       resolve(parent, args){
         //return mentors
+        return Mentor.find({});
       }
     }
   }
