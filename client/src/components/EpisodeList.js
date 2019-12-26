@@ -4,7 +4,7 @@ function EpisodeList() {
   return (
       <div>
         <ul id="episode-list">
-            <li>Hello World!</li>
+            <li>Episode name</li>
         </ul>
       </div>
   );
