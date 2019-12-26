@@ -107,8 +107,8 @@ const Mutation = new GraphQLObjectType({
    addMentor: {
      type: MentorType,
      args: {
-       name: {type: GraphQLString},
-       age: {type: GraphQLInt},
+       name: {type: new GraphQLNonNull(GraphQLString)},
+       age: {type: new GraphQLNonNull(GraphQLInt)},
      },
      resolve(parent, args){
        let mentor = new Mentor({
@@ -121,9 +121,9 @@ const Mutation = new GraphQLObjectType({
    addEpisode: {
      type: EpisodeType,
      args: {
-        name: {type: GraphQLString},
-        podcast: { type: GraphQLString},
-        mentorId: {type: GraphQLID},
+        name: {type: new GraphQLNonNull(GraphQLString)},
+        podcast: { type: new GraphQLNonNull(GraphQLString)},
+        mentorId: {type: new GraphQLNonNull(GraphQLID)},
      },
      resolve(parent, args){
        let episode = new Episode({
