@@ -115,6 +115,12 @@ const Mutation = new GraphQLObjectType({
      args: {
         name: {type: GraphQLString},
         podcast: { type: GraphQLString},
+     },
+     resolve(parent, args){
+       let episode = new Episode({
+         name: args.name,
+         podcast: args.podcast,
+       })
      }
    } 
   }
