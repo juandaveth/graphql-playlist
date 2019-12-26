@@ -121,6 +121,7 @@ const Mutation = new GraphQLObjectType({
        let episode = new Episode({
          name: args.name,
          podcast: args.podcast,
+         mentorId: args.mentorId,
        });
        return episode.save();
      }
