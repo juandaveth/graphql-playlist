@@ -1,6 +1,6 @@
 const graphql = require('graphql');
 const _ = require('lodash');
-const Episode = require('../models/episode');
+const Episode = require('../models/Episode');
 const Mentor = require('../models/Mentor');
 
 const { 
@@ -108,6 +108,13 @@ const Mutation = new GraphQLObjectType({
          age: args.age,
        });
        return mentor.save();
+     }
+   },
+   addEpisode: {
+     type: EpisodeType,
+     args: {
+        name: {type: GraphQLString},
+        podcast: { type: GraphQLString},
      }
    } 
   }
