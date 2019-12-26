@@ -123,7 +123,7 @@ const Mutation = new GraphQLObjectType({
          podcast: args.podcast,
          mentorId: args.mentorId,
        });
-       episode.save();
+       return episode.save();
      }
    } 
   }
