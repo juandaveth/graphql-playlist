@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const _ = require('lodash');
 const Episode = require('../models/episode');
-const Mentor = require('../models/mentor');
+const Mentor = require('../models/Mentor');
 
 const { 
   GraphQLObjectType, 
@@ -107,11 +107,13 @@ const Mutation = new GraphQLObjectType({
          name: args.name,
          age: args.age,
        });
+       mentor.save();
      }
    } 
   }
 })
 
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation: Mutation
 }); 
