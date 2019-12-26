@@ -26,9 +26,9 @@ const {
 
 // dummy data to mentors --> Going to MongoDB
 /* var mentors = [
-  {name: 'Naval Ravikant', age: 45, id: '1'},
-  {name: 'Seth Godin', age: 59, id: '2'},
-  {name: 'Ryan Holiday', age: 32, id: '3'},
+  {name: 'Naval Ravikant', age: 45, id: '1'}, 5e04dfb5a0d9d84bb09579f0
+  {name: 'Seth Godin', age: 59, id: '2'}, 5e04ddaf58c1be2ac81f1547
+  {name: 'Ryan Holiday', age: 32, id: '3'}, 5e04dfe3a0d9d84bb09579f1
 ]*/
 
 const EpisodeType = new GraphQLObjectType({
