@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {gql} from 'apollo-boost';
 
 import {graphql} from 'react-apollo';
@@ -15,14 +15,17 @@ const getEpisodesQuery = gql`
     }
 `
 
-function EpisodeList() {
-  return (
-      <div>
-        <ul id="episode-list">
-            <li>Episode name</li>
-        </ul>
-      </div>
-  );
+class EpisodeList extends Component {
+    render(){
+        console.log(this.props);
+        return (
+            <div>
+              <ul id="episode-list">
+                  <li>Episode name</li>
+              </ul>
+          </div>
+      );
+    }
 }
 
 export default graphql(getEpisodesQuery)(EpisodeList);
