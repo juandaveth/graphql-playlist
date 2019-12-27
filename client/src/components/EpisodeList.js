@@ -1,6 +1,8 @@
 import React from 'react';
 import {gql} from 'apollo-boost';
 
+import {graphql} from 'react-apollo';
+
 const getEpisodesQuery = gql`
     {
         episodes{
@@ -23,4 +25,4 @@ function EpisodeList() {
   );
 }
 
-export default EpisodeList;
+export default graphql(getEpisodesQuery)(EpisodeList);
