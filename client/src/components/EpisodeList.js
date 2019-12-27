@@ -1,6 +1,18 @@
 import React from 'react';
 import {gql} from 'apollo-boost';
 
+const getEpisodesQuery = gql`
+    {
+        episodes{
+        name
+        mentor {
+            id
+        }
+        podcast
+        }
+    }
+`
+
 function EpisodeList() {
   return (
       <div>
