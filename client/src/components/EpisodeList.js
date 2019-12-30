@@ -20,9 +20,9 @@ class EpisodeList extends Component {
           displayEpisodes() {
               var data = this.props.data;
               if(data.loading) {
-
+                return(<div>Loading episodes...</div>);
               } else {
-                  
+
               }
           }
         console.log(this.props.data);
