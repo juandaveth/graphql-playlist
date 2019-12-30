@@ -39,3 +39,6 @@ class AddMentor extends Component {
       );
     }
 }
+
+// Binding the query and the component!
+export default graphql(getMentorsQuery)(AddEpisode);
