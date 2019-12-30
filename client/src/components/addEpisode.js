@@ -11,7 +11,7 @@ const getMentorsQuery = gql`
     }
 `
 
-class AddMentor extends Component {
+class AddEpisode extends Component {
     render(){
         return (
             <form id="add-episode">
