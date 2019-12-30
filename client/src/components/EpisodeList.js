@@ -22,7 +22,11 @@ class EpisodeList extends Component {
               if(data.loading) {
                 return(<div>Loading episodes...</div>);
               } else {
-
+                return data.episodes.map(episode => {
+                    return(
+                        <li>{episode.name}</li>
+                    )
+                })
               }
           }
         console.log(this.props.data);
