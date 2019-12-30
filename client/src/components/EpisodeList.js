@@ -17,7 +17,15 @@ const getEpisodesQuery = gql`
 
 class EpisodeList extends Component {
     render(){
-        console.log(this.props);
+          displayEpisodes() {
+              var data = this.props.data;
+              if(data.loading) {
+
+              } else {
+                  
+              }
+          }
+        console.log(this.props.data);
         return (
             <div>
               <ul id="episode-list">
