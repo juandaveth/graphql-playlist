@@ -8,7 +8,7 @@ const getEpisodesQuery = gql`
         episodes{
         name
         mentor {
-            id
+            name
         }
         podcast
         }
