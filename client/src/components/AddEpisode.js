@@ -14,10 +14,12 @@ const getMentorsQuery = gql`
 class AddEpisode extends Component {
     getMentors() {
         var data = this.props.data;
-        if(data.mentors){
+        if(data.loading){
             return (<option disable>Loding mentors...</option>)
         } else {
-            return (<option></option>)
+            return data.mentors.map(mentor => {
+                return( <option key={mentor.id} value={mentor.id}>{mentor.name}</option> )
+            })
         }
     };
     render(){
@@ -38,6 +40,7 @@ class AddEpisode extends Component {
                     <label>Mentor:</label>
                     <select>
                         <option>Select mentor</option>
+                        {this.getMentors()}
                     </select>
                 </div>
 
