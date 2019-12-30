@@ -3,7 +3,7 @@ import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 
 import EpisodeList from './components/EpisodeList';
-import AddEpisode from './components/addEpisode';
+import AddEpisode from './components/AddEpisode';
 
 // apollo client setup
 const client = new ApolloClient({
