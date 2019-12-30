@@ -22,7 +22,7 @@ class EpisodeList extends Component {
           return(<div>Loading episodes...</div>);
         } else {
           return data.episodes.map(episode => {
-              return(<li>{episode.name}</li>);
+              return(<li key={episode.id}>{episode.name}</li>);
           })
         }
     };
