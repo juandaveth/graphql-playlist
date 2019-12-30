@@ -16,19 +16,17 @@ const getEpisodesQuery = gql`
 `
 
 class EpisodeList extends Component {
+    displayEpisodes() {
+        var data = this.props.data;
+        if(data.loading) {
+          return(<div>Loading episodes...</div>);
+        } else {
+          return data.episodes.map(episode => {
+              return(<li>{episode.name}</li>);
+          })
+        }
+    };
     render(){
-          displayEpisodes() {
-              var data = this.props.data;
-              if(data.loading) {
-                return(<div>Loading episodes...</div>);
-              } else {
-                return data.episodes.map(episode => {
-                    return(
-                        <li>{episode.name}</li>
-                    )
-                })
-              }
-          }
         console.log(this.props.data);
         return (
             <div>
