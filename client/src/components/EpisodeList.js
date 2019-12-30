@@ -31,7 +31,7 @@ class EpisodeList extends Component {
         return (
             <div>
               <ul id="episode-list">
-                  <li>Episode name</li>
+                  {this.displayEpisodes()}
               </ul>
           </div>
       );
