@@ -15,7 +15,7 @@ class AddEpisode extends Component {
     getMentors() {
         var data = this.props.data;
         if(data.loading){
-            return (<option disable>Loding mentors...</option>)
+            return (<option disabled>Loading mentors...</option>)
         } else {
             return data.mentors.map(mentor => {
                 return( <option key={mentor.id} value={mentor.id}>{mentor.name}</option> )
