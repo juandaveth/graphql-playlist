@@ -6,11 +6,13 @@ import {graphql} from 'react-apollo';
 const getEpisodesQuery = gql`
     {
         episodes{
-        name
-        mentor {
-            name
-        }
-        podcast
+                id
+                name
+            mentor {
+                id
+                name
+            }
+            podcast
         }
     }
 `
@@ -21,8 +23,12 @@ class EpisodeList extends Component {
         if(data.loading) {
           return(<div>Loading episodes...</div>);
         } else {
-          return data.episodes.map(episode => {
-              return(<li key={episode.id}>{episode.name}</li>);
+            return data.episodes.map(episode => {
+                return(
+                        <li key={episode.id}>
+                            {episode.name}
+                        </li>
+                    );
           })
         }
     };
