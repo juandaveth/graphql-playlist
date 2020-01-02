@@ -4,7 +4,7 @@ import {graphql} from 'react-apollo';
 import {getMentorsQuery} from '../queries/queries';
 
 class AddEpisode extends Component {
-    getMentors() {
+    displayMentors() {
         var data = this.props.data;
         if(data.loading){
             return (<option disabled>Loading mentors...</option>)
@@ -32,7 +32,7 @@ class AddEpisode extends Component {
                     <label>Mentor:</label>
                     <select>
                         <option>Select mentor</option>
-                        {this.getMentors()}
+                        {this.displayMentors()}
                     </select>
                 </div>
 
