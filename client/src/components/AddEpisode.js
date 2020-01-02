@@ -21,7 +21,13 @@ class AddEpisode extends Component {
             return (<option disabled>Loading mentors...</option>)
         } else {
             return data.mentors.map(mentor => {
-                return( <option key={mentor.id} value={mentor.id}>{mentor.name}</option> )
+                return( <option 
+                            key={mentor.id} 
+                            value={mentor.id}
+                        >
+                            {mentor.name}
+                        </option> 
+                    )
             })
         }
     };
@@ -31,17 +37,31 @@ class AddEpisode extends Component {
 
                 <div className="field">
                     <label>Episode name:</label>
-                    <input type="text"/>
+                    <input 
+                        type="text"
+                        onChange={
+                            (e) => this.setState({name: e.target.value})
+                        }
+                    />
                 </div>
 
                 <div className="field">
                     <label>Podcast:</label>
-                    <input type="text"/>
+                    <input 
+                        type="text"
+                        onChange={
+                            (e) => this.setState({podcast: e.target.value})
+                        }
+                    />
                 </div>
 
                 <div className="field">
                     <label>Mentor:</label>
-                    <select>
+                    <select
+                        onChange={
+                            (e) => this.setState({mentorId: e.target.value})
+                        }
+                    >
                         <option>Select mentor</option>
                         {this.displayMentors()}
                     </select>
