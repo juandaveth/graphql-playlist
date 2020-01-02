@@ -1,21 +1,7 @@
 import React, {Component} from 'react';
-import {gql} from 'apollo-boost';
+import {getEpisodesQuery} from '../queries/queries';
 
 import {graphql} from 'react-apollo';
-
-const getEpisodesQuery = gql`
-    {
-        episodes{
-                id
-                name
-            mentor {
-                id
-                name
-            }
-            podcast
-        }
-    }
-`
 
 class EpisodeList extends Component {
     displayEpisodes() {
