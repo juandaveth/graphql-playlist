@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
+import { flowRight as compose } from 'lodash';
 
-import {getMentorsQuery} from '../queries/queries';
+import {getMentorsQuery, addEpisodeMutation} from '../queries/queries';
 
 class AddEpisode extends Component {
 
@@ -16,7 +17,8 @@ class AddEpisode extends Component {
     
     // This function shows a list of the Episode retreived from mongoDB
     displayMentors() {
-        var data = this.props.data;
+        // Can't read .loading of undefined, we named it on the compose down below
+        var data = this.props.getMentorsQuery;
         if(data.loading){
             return (<option disabled>Loading mentors...</option>)
         } else {
@@ -35,7 +37,6 @@ class AddEpisode extends Component {
     // This function will triger the submiting of the form 
     submitForm(e){
         e.preventDefault();
-        console.log(this.state)
     }
 
     render(){
@@ -85,4 +86,7 @@ class AddEpisode extends Component {
 }
 
 // Binding the query and the component!
-export default graphql(getMentorsQuery)(AddEpisode);
+export default compose(
+    graphql(getMentorsQuery, {name: "getMentorsQuery"}),
+    graphql(addEpisodeMutation, {name: "addEpisodeMutation"})
+)(AddEpisode);
