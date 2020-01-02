@@ -1,15 +1,7 @@
 import React, {Component} from 'react';
-import {gql} from 'apollo-boost';
 import {graphql} from 'react-apollo';
 
-const getMentorsQuery = gql`
-    {
-        mentors{
-            name
-            id
-        }
-    }
-`
+import {getMentorsQuery} from '../queries/queries';
 
 class AddEpisode extends Component {
     getMentors() {

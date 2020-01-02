@@ -14,4 +14,13 @@ const getEpisodesQuery = gql`
     }
 `
 
-export {getEpisodesQuery}
+const getMentorsQuery = gql`
+    {
+        mentors{
+            name
+            id
+        }
+    }
+`
+
+export {getEpisodesQuery, getMentorsQuery};
