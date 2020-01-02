@@ -25,8 +25,11 @@ const getMentorsQuery = gql`
 
 const addEpisodeMutation = gql`
     mutation{
-        
+        addEpisode(name: "", podcast: "", mentorId: ""){
+            name
+            id
+        }
     }
 `
 
-export {getEpisodesQuery, getMentorsQuery};
+export {getEpisodesQuery, getMentorsQuery, addEpisodeMutation};
