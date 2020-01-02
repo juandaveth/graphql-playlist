@@ -4,6 +4,17 @@ import {graphql} from 'react-apollo';
 import {getMentorsQuery} from '../queries/queries';
 
 class AddEpisode extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            podcast: '',
+            mentorId: ''
+        };
+    };
+    
+
     displayMentors() {
         var data = this.props.data;
         if(data.loading){
