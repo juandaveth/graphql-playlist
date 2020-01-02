@@ -37,6 +37,7 @@ class AddEpisode extends Component {
     // This function will triger the submiting of the form 
     submitForm(e){
         e.preventDefault();
+        this.props.addEpisodeMutation();
     }
 
     render(){
