@@ -103,37 +103,38 @@ const RootQuery = new GraphQLObjectType({
 
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
-  fields: {
-   addMentor: {
-     type: MentorType,
-     args: {
-       name: {type: new GraphQLNonNull(GraphQLString)},
-       age: {type: new GraphQLNonNull(GraphQLInt)},
-     },
-     resolve(parent, args){
-       let mentor = new Mentor({
-         name: args.name,
-         age: args.age,
-       });
-       return mentor.save();
-     }
-   },
-   addEpisode: {
-     type: EpisodeType,
-     args: {
+  fields: 
+    {
+    addMentor: {
+      type: MentorType,
+      args: {
         name: {type: new GraphQLNonNull(GraphQLString)},
-        podcast: { type: new GraphQLNonNull(GraphQLString)},
-        mentorId: {type: new GraphQLNonNull(GraphQLID)},
-     },
-     resolve(parent, args){
-       let episode = new Episode({
-         name: args.name,
-         podcast: args.podcast,
-         mentorId: args.mentorId,
-       });
-       return episode.save();
-     }
-   } 
+        age: {type: new GraphQLNonNull(GraphQLInt)},
+      },
+      resolve(parent, args){
+        let mentor = new Mentor({
+          name: args.name,
+          age: args.age,
+        });
+        return mentor.save();
+      }
+    },
+    addEpisode: {
+      type: EpisodeType,
+      args: {
+          name: {type: new GraphQLNonNull(GraphQLString)},
+          podcast: { type: new GraphQLNonNull(GraphQLString)},
+          mentorId: {type: new GraphQLNonNull(GraphQLID)},
+      },
+      resolve(parent, args){
+        let episode = new Episode({
+          name: args.name,
+          podcast: args.podcast,
+          mentorId: args.mentorId,
+        });
+        return episode.save();
+      }
+    } 
   }
 })
 
