@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import { flowRight as compose } from 'lodash';
 
-import {getMentorsQuery, addEpisodeMutation} from '../queries/queries';
+import {getMentorsQuery, addEpisodeMutation, getEpisodesQuery} from '../queries/queries';
 
 class AddEpisode extends Component {
 
@@ -42,7 +42,8 @@ class AddEpisode extends Component {
                 name: this.state.name,
                 podcast: this.state.podcast,
                 mentorId: this.state.mentorId
-            }
+            },
+            refetchQueries: [{ query: getEpisodesQuery }]
         });
     }
 
