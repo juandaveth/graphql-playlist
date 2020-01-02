@@ -23,4 +23,10 @@ const getMentorsQuery = gql`
     }
 `
 
+const addEpisodeMutation = gql`
+    mutation{
+        
+    }
+`
+
 export {getEpisodesQuery, getMentorsQuery};
