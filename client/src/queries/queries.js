@@ -5,10 +5,6 @@ const getEpisodesQuery = gql`
         episodes{
                 id
                 name
-            mentor {
-                id
-                name
-            }
             podcast
         }
     }
@@ -24,8 +20,16 @@ const getMentorsQuery = gql`
 `
 
 const addEpisodeMutation = gql`
-    mutation{
-        addEpisode(name: "", podcast: "", mentorId: ""){
+    mutation(
+        $name: String!,
+        $podcast: String!,
+        $mentorId: ID!
+        ){
+        addEpisode(
+            name: $name,
+            podcast: $podcast,
+            mentorId: $mentorId
+        ){
             name
             id
         }
