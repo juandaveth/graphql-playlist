@@ -14,7 +14,7 @@ class AddEpisode extends Component {
         };
     };
     
-
+    // This function shows a list of the Episode retreived from mongoDB
     displayMentors() {
         var data = this.props.data;
         if(data.loading){
@@ -31,9 +31,19 @@ class AddEpisode extends Component {
             })
         }
     };
+
+    // This function will triger the submiting of the form 
+    submitForm(e){
+        e.preventDefault();
+        console.log(this.state)
+    }
+
     render(){
         return (
-            <form id="add-episode">
+            <form 
+                onSubmit={this.submitForm.bind(this)}
+                id="add-episode"
+            >
 
                 <div className="field">
                     <label>Episode name:</label>
