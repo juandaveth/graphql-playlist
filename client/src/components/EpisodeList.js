@@ -4,6 +4,12 @@ import {graphql} from 'react-apollo';
 import EpisodeDetails from './EpisodeDetails';
 
 class EpisodeList extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            selected: null
+        }
+    }
     displayEpisodes() {
         var data = this.props.data;
         if(data.loading) {
