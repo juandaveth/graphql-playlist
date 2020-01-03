@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import {getEpisodeQuery} from '../queries/queries';
 
