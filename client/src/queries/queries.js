@@ -21,14 +21,16 @@ const getMentorsQuery = gql`
 
 const getEpisodeQuery = gql`
     query($id: ID){
-        id
-        podcast
-        mentor{
+        episode(id: $id){
             id
-            name
-        }
-        episodes{
-           name 
+            podcast
+            mentor{
+                id
+                name
+                episodes{
+                    name 
+                }
+            }
         }
     }
 `
