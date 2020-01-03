@@ -28,7 +28,7 @@ const getEpisodeQuery = gql`
             name
         }
         episodes{
-            
+           name 
         }
     }
 `
