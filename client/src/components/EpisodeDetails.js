@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql} from 'react-apollo';
+import {getEpisodeQuery} from '../queries/queries';
 
 class EpisodeDetails extends Component {
     render(){

@@ -50,4 +50,4 @@ const addEpisodeMutation = gql`
     }
 `
 
-export {getEpisodesQuery, getMentorsQuery, addEpisodeMutation};
+export {getEpisodesQuery, getMentorsQuery, addEpisodeMutation, getEpisodeQuery};
