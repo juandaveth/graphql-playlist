@@ -11,7 +11,10 @@ class EpisodeList extends Component {
         } else {
             return data.episodes.map(episode => {
                 return(
-                        <li key={episode.id}>
+                        <li 
+                            key={episode.id}
+                            onClick={(e)=> {}}
+                        >
                             {episode.name}
                         </li>
                     );
