@@ -19,6 +19,20 @@ const getMentorsQuery = gql`
     }
 `
 
+const getEpisodeQuery = gql`
+    query($id: ID){
+        id
+        podcast
+        mentor{
+            id
+            name
+        }
+        episodes{
+            
+        }
+    }
+`
+
 const addEpisodeMutation = gql`
     mutation(
         $name: String!,
