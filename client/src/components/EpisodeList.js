@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {getEpisodesQuery} from '../queries/queries';
-
 import {graphql} from 'react-apollo';
+import EpisodeDetails from './EpisodeDetails';
 
 class EpisodeList extends Component {
     displayEpisodes() {
@@ -25,7 +25,8 @@ class EpisodeList extends Component {
               <ul id="episode-list">
                   {this.displayEpisodes()}
               </ul>
-          </div>
+              <EpisodeDetails />
+            </div>
       );
     }
 }
