@@ -4,6 +4,7 @@ import {getEpisodeQuery} from '../queries/queries';
 
 class EpisodeDetails extends Component {
     render(){
+        console.log(this.props);
         return (
             <div id="episode-details">
                 <p>Output will be here</p>
@@ -12,4 +13,12 @@ class EpisodeDetails extends Component {
     }
 };
 
-export default graphql(getEpisodeQuery)(EpisodeDetails);
+export default graphql(getEpisodeQuery, {
+    options:(props) => {
+        return {
+            variables: {
+                id: props.episodeId
+            }
+        }
+    }
+})(EpisodeDetails);
