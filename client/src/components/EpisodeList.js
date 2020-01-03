@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getEpisodesQuery} from '../queries/queries';
 import {graphql} from 'react-apollo';
 import EpisodeDetails from './EpisodeDetails';
+import { getBlockStringIndentation } from 'graphql/language/blockString';
 
 class EpisodeList extends Component {
     constructor(props){
@@ -19,7 +20,9 @@ class EpisodeList extends Component {
                 return(
                         <li 
                             key={episode.id}
-                            onClick={(e)=> {}}
+                            onClick={(e)=> {
+                                this.setState({selected: episode.id})
+                            }}
                         >
                             {episode.name}
                         </li>
