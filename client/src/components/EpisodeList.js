@@ -37,7 +37,7 @@ class EpisodeList extends Component {
               <ul id="episode-list">
                   {this.displayEpisodes()}
               </ul>
-              <EpisodeDetails />
+              <EpisodeDetails episodeId={this.state.selected} />
             </div>
       );
     }
